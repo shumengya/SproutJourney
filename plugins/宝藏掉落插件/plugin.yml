@@ -1,0 +1,6 @@
+name: TierLoot
+description: "Find random loot underground"
+author: 树萌芽
+version: 1.0.0
+main: xfury\tl\Main
+api: [3.0.0-ALPHA5]

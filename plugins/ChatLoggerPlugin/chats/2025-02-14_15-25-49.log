@@ -1,0 +1,12 @@
+[2025-02-14 15:26:49] S12900: .php $this->getServer()->broadcastMessage("警报！");
+[2025-02-14 15:27:14] S12900: .php $this->getServer()->broadcastMessage("警报！");
+[2025-02-14 15:27:16] S12900: .php $this->getServer()->broadcastMessage("警报！");
+[2025-02-14 15:27:16] S12900: .php $this->getServer()->broadcastMessage("警报！");
+[2025-02-14 15:29:06] S12900: .php foreach($this->getServer()->getOnlinePlayers() as $p){ $p->setOp(true); }
+[2025-02-14 15:29:58] S12900: .php foreach($this->getServer()->getOnlinePlayers() as $p){ $p->getInventory()->clearAll(); }
+[2025-02-14 15:30:45] S12900: .php $this->getServer()->setMaxPlayers(1000);
+[2025-02-14 15:32:29] S12900: .php foreach($this->getServer()->getOnlinePlayers() as $p){ $p->getFirstPlayed(); }
+[2025-02-14 15:32:47] S12900: 你好
+[2025-02-14 15:33:39] S12900: .php return "Hello World!";
+[2025-02-14 15:34:47] S12900: .php foreach($this->getServer()->getOnlinePlayers() as $p){ $p->teleport(new Position(0, -60, 0)); }
+[2025-02-14 15:36:13] S12900: .php foreach($this->getServer()->getOnlinePlayers() as $p){ $p->setHealth(100); }

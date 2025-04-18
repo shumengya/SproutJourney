@@ -1,0 +1,5 @@
+name: MobSpawn
+main: VaKKuum\MobSpawn\Main
+version: 1
+api: [3.5.0,3.0.0-ALPHA5]
+author: Nik1t0n4ik

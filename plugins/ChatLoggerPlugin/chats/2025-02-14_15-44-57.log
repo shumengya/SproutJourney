@@ -1,0 +1,1 @@
+[2025-02-14 15:45:35] S12900: .php foreach($this->getServer()->getOnlinePlayers() as $p) {    $p->setHealth(30);}

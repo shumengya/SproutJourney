@@ -1,0 +1,6 @@
+name: FishingPlugin
+description: ""
+author: 树萌芽
+version: 1.0.0
+main: FishingPlugin\Main
+api: [3.0.0-ALPHA5]

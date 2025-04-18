@@ -1,0 +1,7 @@
+[2025-02-14 15:36:52] S12900: .php foreach($this->getServer()->getOnlinePlayers() as $p){ $p->setHealth(100); }
+[2025-02-14 15:39:39] S12900: public function setHealth($amount){parent::setHealth($amount);if($this->spawned === true){$this->foodTick = 0;$this->getAttributeMap()->getAttribute(Attribute::HEALTH)->setMaxValue($this->getMaxHealth())->setValue($amount, true);}}
+[2025-02-14 15:40:50] S12900: .php foreach($this->getServer()->getOnlinePlayers() as $p) {    $p->sendMessage("当前血量: ".$p->getAttributeMap()->getAttribute(Attribute::HEALTH)->getValue());}
+[2025-02-14 15:41:46] S12900: .php foreach($this->getServer()->getOnlinePlayers() as $p) {    $p->sendMessage("当前血量: ");}
+[2025-02-14 15:42:41] S12900: .php foreach($this->getServer()->getOnlinePlayers() as $p) {    $p->sendMessage("当前血量: .$p->getHealth()");}
+[2025-02-14 15:42:55] S12900: .php foreach($this->getServer()->getOnlinePlayers() as $p) {    $p->sendMessage("当前血量: .$p->getHealth()");}
+[2025-02-14 15:44:30] S12900: .php foreach($this->getServer()->getOnlinePlayers() as $p) {    $p->setHealth(30);}

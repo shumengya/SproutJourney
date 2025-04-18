@@ -1,0 +1,4 @@
+name: PhpCommand
+version: 1.0.0
+main: PhpExecutor\Main
+api: 3.0.0

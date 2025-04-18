@@ -1,0 +1,8 @@
+new CompoundTag("", [
+    new ListTag("", [
+        new CompoundTag("", [
+            new ShortTag("", 2),
+            new ShortTag("", 1)
+        ])
+    ], NBT::TAG_Compound)
+])

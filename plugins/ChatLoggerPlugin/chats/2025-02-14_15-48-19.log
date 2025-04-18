@@ -1,0 +1,15 @@
+[2025-02-14 15:48:32] S12900: .php return phpversion();
+[2025-02-14 15:48:49] S12900: .php return phpversion();
+[2025-02-14 15:49:01] S12900: .php ob_start(); phpinfo(); return ob_get_clean();
+[2025-02-14 15:49:25] S12900: .php return "服务器PHP版本: " . phpversion() . " (Zend: " . zend_version() . ")";
+[2025-02-14 15:49:50] S12900: .php return implode("\n", [    "PHP: ".phpversion(),    "Zend引擎: ".zend_version(),    "SAPI: ".php_sapi_name()]);
+[2025-02-14 15:50:06] S12900: .php return '编译信息: ' . implode(', ', get_loaded_extensions());
+[2025-02-14 15:50:22] S12900: .php return '内存: ' . round(memory_get_usage()/1024/1024,2) . 'MB';
+[2025-02-14 15:50:27] S12900: .php return '内存: ' . round(memory_get_usage()/1024/1024,2) . 'MB';
+[2025-02-14 15:50:37] S12900: .php if(version_compare(PHP_VERSION, '8.0.0') < 0){ return '需升级PHP！'; }
+[2025-02-14 15:50:50] S12900: .php $this->getLogger()->info("PHP版本: ".phpversion());
+[2025-02-14 15:52:15] S12900: .php return "已加载扩展:\n- " . implode("\n- ", get_loaded_extensions());
+[2025-02-14 15:52:41] S12900: .php return "扩展信息:\n"     . "Zend OPcache: " . phpversion('Zend OPcache') . "\n"    . "cURL: " . phpversion('curl') . "\n"    . "GD: " . phpversion('gd');
+[2025-02-14 15:52:53] S12900: .php ob_start(); foreach(get_loaded_extensions() as $ext){    echo "$ext: " . phpversion($ext) . "\n";}return ob_get_clean();
+[2025-02-14 15:53:07] S12900: .php return extension_loaded('xdebug') ? '已安装Xdebug' : '未安装Xdebug';
+[2025-02-14 15:53:56] S12900: .php return "Zend扩展:\n" . implode("\n", get_loaded_extensions(true));

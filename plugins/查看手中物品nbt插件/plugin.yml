@@ -1,0 +1,8 @@
+name: ItemNBTViewer
+version: 1.0.0
+main: ItemNBTViewer\Main
+api: 3.0.0
+commands:
+  viewnbt:
+    description: 查看手持物品的NBT数据
+    usage: "/viewnbt"

@@ -1,0 +1,2 @@
+# Updated 02/14/25 14:59 by LiteCore-public v1.0.9-release 1.1.X
+# victim name | ban date | banned by | banned until | reason

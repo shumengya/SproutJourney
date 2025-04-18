@@ -1,0 +1,6 @@
+name: RandomOreGenerator
+main: RandomOreGenerator\Main
+version: 1.0.0
+api: [3.0.0, 4.0.0]
+author: YourName
+description: A plugin to log player chat messages into a file named after the server start time.

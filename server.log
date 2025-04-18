@@ -1,0 +1,47 @@
+2025-01-25 [22:52:54] [Server thread/WARNING]: Non-packaged LiteCore installation detected. Consider using a phar in production for better performance.
+2025-01-25 [22:52:54] [Server thread/INFO]: Loading properties and configuration...
+2025-01-25 [22:52:54] [Server thread/INFO]: Online mode has been turned off in server.properties
+2025-01-25 [22:52:54] [Server thread/INFO]: Xbox Live authentication is disabled.
+2025-01-25 [22:52:54] [Server thread/INFO]: Selected English (eng) as the base language
+2025-01-25 [22:52:55] [Server thread/INFO]: Opening server on 0.0.0.0:19132
+2025-01-25 [22:52:55] [Server thread/INFO]: LiteCore-public v1.0.9-release is NOT distributed under open licenses that provide free access to the core.
+2025-01-25 [22:52:55] [Server thread/INFO]: Loading resource packs...
+2025-01-25 [22:52:55] [Server thread/INFO]: Loading (Source) WorldTeleportPlugin v1.1.0
+2025-01-25 [22:52:55] [Server thread/INFO]: Loading (Source) CutWatermelon v1.0.0
+2025-01-25 [22:52:55] [Server thread/INFO]: Loading (Source) CutGlass v1.0.0
+2025-01-25 [22:52:55] [Server thread/INFO]: Loading (Source) CutIce v1.0.0
+2025-01-25 [22:52:55] [Server thread/INFO]: Loading (Source) TierLoot v1.0.0
+2025-01-25 [22:52:55] [Server thread/INFO]: Loading (Source) SpecialHit v1.0.0
+2025-01-25 [22:52:55] [Server thread/INFO]: Loading (Source) LuLeaves v1.0.0
+2025-01-25 [22:52:55] [Server thread/INFO]: Loading (Source) EventNotifierPlugin v1.0.0
+2025-01-25 [22:52:55] [Server thread/INFO]: Loading (Source) ChatLoggerPlugin v1.0.0
+2025-01-25 [22:52:55] [Server thread/INFO]: Loading (Source) Adrenaline v1.0.0
+2025-01-25 [22:52:55] [Server thread/INFO]: Loading (Source) relic v1.0.0
+2025-01-25 [22:52:55] [Server thread/INFO]: Loading (Source) BoreWoodFire v1.0.0
+2025-01-25 [22:52:55] [Server thread/INFO]: Loading (Source) AltitudeStress v1.0.0
+2025-01-25 [22:52:55] [Server thread/INFO]: [CutWatermelon] RealLife系列十一 刀撸西瓜掉落 已加载
+2025-01-25 [22:52:55] [Server thread/INFO]: [CutGlass] RealLife系列之八 刀撸玻璃掉落 已加载
+2025-01-25 [22:52:55] [Server thread/INFO]: [CutIce] RealLife系列十 刀撸冰块掉落 已加载
+2025-01-25 [22:52:55] [Server thread/INFO]: [SpecialHit] SpecialHit----效果攻击
+2025-01-25 [22:52:55] [Server thread/INFO]: [SpecialHit] Spiderman开发,请加入交流群哟~
+2025-01-25 [22:52:55] [Server thread/INFO]: [LuLeaves] RealLife系列之七 手撸树叶掉落 已加载
+2025-01-25 [22:52:55] [Server thread/INFO]: [Adrenaline] RealLife系列之六 肾上腺素 已加载
+2025-01-25 [22:52:55] [Server thread/INFO]: [BoreWoodFire] RealLife系列之三 钻木取火 已加载
+2025-01-25 [22:52:55] [Server thread/INFO]: [AltitudeStress] RealLife系列之四 高原反应 已加载
+2025-01-25 [22:52:55] [Server thread/INFO]: [AltitudeStress] RealLife是Spiderman正在开发的仿生功能插件,坚持做到与人们平时生活所遇到的一致
+2025-01-25 [22:52:55] [Server thread/NOTICE]: Логи пакетов выключены.
+2025-01-25 [22:52:55] [Server thread/INFO]: Preparing level "world"
+2025-01-25 [22:52:55] [Server thread/INFO]: Preparing level "nether"
+2025-01-25 [22:52:55] [Server thread/INFO]: Preparing level "ender"
+2025-01-25 [22:52:55] [Server thread/INFO]: [WorldTeleportPlugin] WorldTeleportPlugin has been enabled!
+2025-01-25 [22:52:55] [Server thread/INFO]: [宝藏掉落] 插件激活成功!
+2025-01-25 [22:52:55] [Server thread/INFO]: [EventNotifierPlugin] [EventNotifierPlugin] 已经加载！
+2025-01-25 [22:52:55] [Server thread/INFO]: [ChatLoggerPlugin] [聊天记录]插件 已经加载!
+2025-01-25 [22:52:55] [Server thread/INFO]: [relic] 加载遗迹文件中
+2025-01-25 [22:52:55] [Server thread/INFO]: [relic] 遗迹文件加载完成, 共加载 0个遗迹
+2025-01-25 [22:52:55] [Server thread/INFO]: [relic] 作者: 橘子
+2025-01-25 [22:52:55] [Server thread/INFO]: Starting GS4 status listener
+2025-01-25 [22:52:55] [Server thread/INFO]: Setting query port to 19132
+2025-01-25 [22:52:55] [Server thread/INFO]: Query running on 0.0.0.0:19132
+2025-01-25 [22:52:55] [Server thread/INFO]: Default game type: Survival Mode
+2025-01-25 [22:52:55] [Server thread/INFO]: Done (0.721s)! For help, type "help" or "?"

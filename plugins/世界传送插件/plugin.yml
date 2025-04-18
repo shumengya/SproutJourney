@@ -1,0 +1,15 @@
+name: WorldTeleportPlugin
+main: WorldTeleportPlugin\Main
+version: 1.1.0
+api: [3.0.0, 4.0.0]
+author: YourName
+description: A plugin that allows players to teleport between worlds and list all worlds.
+commands:
+  tpworld:
+    description: Teleport to a specified world.
+    usage: "/tpworld <world>"
+    permission: worldteleportplugin.command.tpworld
+  lsworld:
+    description: List all available worlds.
+    usage: "/lsworld"
+    permission: worldteleportplugin.command.lsworld
