@@ -1,7 +1,5 @@
 <?php
 
-
-
 namespace pocketmine\entity;
 
 use pocketmine\event\entity\EntityDamageEvent;

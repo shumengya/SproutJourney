@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  pocketmine-server:
+    image: pocketmine-server
+    container_name: pocketmine-server
+    ports:
+      - "19133:19132/udp"  # MinecraftPE默认端口
+    volumes:
+      # 数据持久化 - 将容器内的数据映射到主机
+      - ./worlds:/server/worlds
+      - ./players:/server/players
+      - ./plugins:/server/plugins
+      - ./banned-ips.txt:/server/banned-ips.txt
+      - ./banned-cids.txt:/server/banned-cids.txt
+      - ./pocketmine.yml:/server/pocketmine.yml
+      - ./server.properties:/server/server.properties
+    restart: unless-stopped
+    stdin_open: true      # 保持STDIN打开
+    tty: true            # 分配伪终端
+    environment:
+      - TZ=Asia/Shanghai   # 设置时区为中国时区
+    networks:
+      - pocketmine-network
+
+networks:
+  pocketmine-network:
+    driver: bridge 

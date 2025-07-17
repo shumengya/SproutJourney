@@ -1,9 +1,28 @@
 <?php
 
+/*
+ * _      _ _        _____               
+ *| |    (_) |      / ____|              
+ *| |     _| |_ ___| |     ___  _ __ ___ 
+ *| |    | | __/ _ \ |    / _ \| '__/ _ \
+ *| |____| | ||  __/ |___| (_) | | |  __/
+ *|______|_|\__\___|\_____\___/|_|  \___|
+ *
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Lesser General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * @author genisyspromcpe
+ * @link https://github.com/LiteCoreTeam/LiteCore
+ *
+ *
+*/
+
 namespace pocketmine\entity;
 
 use pocketmine\event\entity\EntityDamageByEntityEvent;
-use pocketmine\event\entity\EntityDamageEvent;
 use pocketmine\level\Explosion;
 use pocketmine\level\sound\TNTPrimeSound;
 use pocketmine\level\sound\ExplodeSound;
@@ -15,29 +34,33 @@ use pocketmine\nbt\tag\ByteTag;
 use pocketmine\network\mcpe\protocol\AddEntityPacket;
 use pocketmine\Player;
 use pocketmine\math\Vector3;
-use pocketmine\math\AxisAlignedBB;
 
 class Creeper extends Monster implements Explosive {
-#----------基本数据优化----------
 	const NETWORK_ID = 33;
+
 	const DATA_SWELL = 19;
 	const DATA_SWELL_OLD = 20;
 	const DATA_SWELL_DIRECTION = 21;
+	
 	public $width = 0.6;
 	public $length = 0.6;
-	public $height = 1.8;
-	public $dropExp = [0, 0];
+	public $height = 0;
+
+	public $dropExp = [5, 5];
+	
 	public $drag = 0.2;
-	public $gravity = 0.15;
-	private $step = 0.12;
+	public $gravity = 0.3;
+	
+	private $step = 0.1;
 	private $motionVector = null;
 	private $farest = null;
 	private $boom = false;
-	private $boomTimer = 5;
+	private $boomTimer = 25;
 	private $boomTick = 0;
-	protected $jumpVelocity = 1.3;
-#----------基本数据优化----------
 
+	/**
+	 * @return string
+	 */
 	public function getName() : string{
 		return "Creeper";
 	}
@@ -45,22 +68,16 @@ class Creeper extends Monster implements Explosive {
 	public function initEntity(){
 		parent::initEntity();
 
-		// 初始化碰撞箱
-		$this->boundingBox = new AxisAlignedBB(
-			$this->x - $this->width / 2,
-			$this->y,
-			$this->z - $this->length / 2,
-			$this->x + $this->width / 2,
-			$this->y + $this->height,
-			$this->z + $this->length / 2
-		);
-
 		if(!isset($this->namedtag->powered)){
 			$this->setPowered(false);
 		}
 		$this->setDataFlag(self::DATA_FLAGS, self::DATA_FLAG_POWERED, $this->isPowered());
 	}
 
+	/**
+	 * @param bool           $powered
+	 * @param Lightning|null $lightning
+	 */
 	public function setPowered(bool $powered, Lightning $lightning = null){
 		if($lightning != null){
 			$powered = true;
@@ -75,10 +92,16 @@ class Creeper extends Monster implements Explosive {
 		}
 	}
 
+	/**
+	 * @return bool
+	 */
 	public function isPowered() : bool{
 		return (bool) $this->namedtag["powered"];
 	}
 
+	/**
+	 * @param Player $player
+	 */
 	public function spawnTo(Player $player){
 		$pk = new AddEntityPacket();
 		$pk->eid = $this->getId();
@@ -128,24 +151,24 @@ class Creeper extends Monster implements Explosive {
 		if($this->isClosed() or !$this->isAlive()){
 			return parent::onUpdate($currentTick);
 		}
-	
+		
 		if($this->isMorph){
 			return true;
 		}
-	
+
 		$this->timings->startTiming();
-	
+
 		$hasUpdate = parent::onUpdate($currentTick);
-		if ($this->getLevel() !== null) {
-			$block = $this->getLevel()->getBlock(new Vector3(floor($this->x), floor($this->y) - 1, floor($this->z)));
-		}else{
-			return false;
-		}
-	
+        if ($this->getLevel() !== null) {
+            $block = $this->getLevel()->getBlock(new Vector3(floor($this->x), floor($this->y) - 1, floor($this->z)));
+        }else{
+            return false;
+        }
+		
 		$x = 0;
 		$y = 0;
 		$z = 0;
-	
+		
 		if($this->isOnGround()){
 			if($this->fallDistance > 0){
 				$this->updateFallState($this->fallDistance, true);
@@ -156,7 +179,7 @@ class Creeper extends Monster implements Explosive {
 							if($this->farest == null){
 								$this->farest = $viewer;
 							}
-	
+							
 							if($this->farest != $viewer){
 								if($this->distance($viewer) < $this->distance($this->farest)){
 									$this->farest = $viewer;
@@ -164,7 +187,7 @@ class Creeper extends Monster implements Explosive {
 							}
 						}
 					}
-	
+					
 					if($this->boom){
 						if($this->boomTimer > 0){
 							$this->boomTimer--;
@@ -188,7 +211,7 @@ class Creeper extends Monster implements Explosive {
 							}
 						}
 					}
-	
+					
 					if($this->farest != null){
 						if(($this->farest instanceof Player)and($this->farest->isSurvival())and($this->distance($this->farest) < 16)){
 							$this->motionVector = $this->farest->asVector3();
@@ -197,7 +220,7 @@ class Creeper extends Monster implements Explosive {
 							$this->motionVector = null;
 						}
 					}
-	
+					
 					if($this->farest != null){
 						if($this->distance($this->farest) <= 2){
 							if(!$this->boom){
@@ -212,7 +235,7 @@ class Creeper extends Monster implements Explosive {
 							}
 						}
 					}
-	
+					
 					if(($this->motionVector == null)or($this->distance($this->motionVector) < $this->step)){
 						if($this->farest == null){
 							$rx = mt_rand(-5, 5);
@@ -237,7 +260,7 @@ class Creeper extends Monster implements Explosive {
 							}elseif(($this->motionVector->z - $this->z) < -$this->step){
 								$z = -$this->step;
 							}
-	
+							
 							$bx = floor($this->x);
 							$by = floor($this->y);
 							$bz = floor($this->z);
@@ -258,19 +281,7 @@ class Creeper extends Monster implements Explosive {
 							}
 							$block1 = new Vector3($bx, $by, $bz);
 							$block2 = new Vector3($bx, $by + 1, $bz);
-	
-							$blockAhead = $this->getLevel()->getBlock($block1);
-							$blockAbove = $this->getLevel()->getBlock($block2);
-	
-							if($blockAhead->isSolid() && !$blockAbove->isSolid()){
-								$this->jump();
-								$y = $this->getJumpVelocity();
-							} elseif($blockAhead->isSolid() && $blockAbove->isSolid()){
-								$this->motionVector = null;
-								$rx = mt_rand(-5, 5);
-								$rz = mt_rand(-5, 5);
-								$this->motionVector = new Vector3($this->x + $rx, $this->y, $this->z + $rz);
-							} elseif($this->isInsideOfWater() || ($blockAhead->isSolid() && !$blockAbove->isSolid())){
+							if(($this->isInsideOfWater())or($this->level->isFullBlock($block1) && !$this->level->isFullBlock($block2))){
 								if($x > 0){
 									$x = $x + 0.05;
 								}elseif($x < 0){
@@ -282,8 +293,10 @@ class Creeper extends Monster implements Explosive {
 									$z = $z - 0.05;
 								}
 								$this->move(0, 1.5, 0);
+							}elseif($this->level->isFullBlock($block1) && $this->level->isFullBlock($block2)){
+								$this->motionVector = null;
 							}
-	
+							
 							$this->yaw = $this->getMyYaw($x, $z);
 							$nextPos = new Vector3($this->x + $x, $this->y, $this->z + $z);
 							$latestPos = new Vector3($this->x, $this->y, $this->z);
@@ -293,29 +306,17 @@ class Creeper extends Monster implements Explosive {
 				}
 			}
 		}
-	
+		
 		if((($x != 0)or($y != 0)or($z != 0))and($this->motionVector != null)){
 			$this->setMotion(new Vector3($x, $y, $z));
 		}
-	
+		
 		$this->timings->stopTiming();
-	
+
 		return $hasUpdate;
 	}
 	
-	public function explode(){	
-	}
-
-	public function fall($fallDistance){
-		if($this->isInsideOfWater()){
-			return;
-		}
+	public function explode(){
 		
-		// 只有从6格以上掉落才受到伤害
-		if($fallDistance > 6){
-			$damage = ceil($fallDistance - 6);
-			$ev = new EntityDamageEvent($this, EntityDamageEvent::CAUSE_FALL, $damage);
-			$this->attack($ev->getFinalDamage(), $ev);
-		}
 	}
 }

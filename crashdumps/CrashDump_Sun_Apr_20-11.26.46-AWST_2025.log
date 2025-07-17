@@ -1,0 +1,179 @@
+LiteCore-public v1.0.9-release Crash Dump Sun Apr 20 11:26:46 AWST 2025
+
+Error: Declaration of revivalpmmp\pureentities\entity\BaseEntity::updateMovement() should be compatible with pocketmine\entity\Entity::updateMovement(bool $teleport = false)
+File: plugins/生物AI插件/src/revivalpmmp/pureentities/entity/BaseEntity
+Line: 0
+Type: ErrorException
+
+THIS CRASH WAS CAUSED BY A PLUGIN
+
+Code:
+[1] <?php
+[2] 
+[3] /*  PureEntitiesX: Mob AI Plugin for PMMP
+[4]     Copyright (C) 2017 RevivalPMMP
+[5] 
+[6]     This program is free software: you can redistribute it and/or modify
+[7]     it under the terms of the GNU General Public License as published by
+[8]     the Free Software Foundation, either version 3 of the License, or
+[9]     any later version.
+[10] 
+
+Backtrace:
+#0 pmsrc/src/spl/BaseClassLoader(131): pocketmine\utils\Utils::errorExceptionHandler(integer 2, string[166] Declaration of revivalpmmp\pureentities\entity\BaseEntity::updateMovement() shou, string[120] C:\Users\BigTang\Desktop\.....................\plugins\......AI......\src\reviva, integer 0, array[2])
+#1 pmsrc/src/spl/BaseClassLoader(131): include()
+#2 pmsrc/src/spl/BaseClassLoader(117): BaseClassLoader->loadClass(string[42] revivalpmmp\pureentities\entity\BaseEntity)
+#3 (): BaseClassLoader->{closure}(string[42] revivalpmmp\pureentities\entity\BaseEntity)
+#4 plugins/生物AI插件/src/revivalpmmp/pureentities/entity/WalkingEntity(26): spl_autoload_call(string[42] revivalpmmp\pureentities\entity\BaseEntity)
+#5 pmsrc/src/spl/BaseClassLoader(131): include(string[123] C:\Users\BigTang\Desktop\.....................\plugins\......AI......\src\reviva)
+#6 pmsrc/src/spl/BaseClassLoader(117): BaseClassLoader->loadClass(string[45] revivalpmmp\pureentities\entity\WalkingEntity)
+#7 (): BaseClassLoader->{closure}(string[45] revivalpmmp\pureentities\entity\WalkingEntity)
+#8 plugins/生物AI插件/src/revivalpmmp/pureentities/entity/monster/WalkingMonster(42): spl_autoload_call(string[45] revivalpmmp\pureentities\entity\WalkingEntity)
+#9 pmsrc/src/spl/BaseClassLoader(131): include(string[132] C:\Users\BigTang\Desktop\.....................\plugins\......AI......\src\reviva)
+#10 pmsrc/src/spl/BaseClassLoader(117): BaseClassLoader->loadClass(string[54] revivalpmmp\pureentities\entity\monster\WalkingMonster)
+#11 (): BaseClassLoader->{closure}(string[54] revivalpmmp\pureentities\entity\monster\WalkingMonster)
+#12 plugins/生物AI插件/src/revivalpmmp/pureentities/entity/monster/walking/Stray(40): spl_autoload_call(string[54] revivalpmmp\pureentities\entity\monster\WalkingMonster)
+#13 pmsrc/src/spl/BaseClassLoader(131): include(string[131] C:\Users\BigTang\Desktop\.....................\plugins\......AI......\src\reviva)
+#14 pmsrc/src/spl/BaseClassLoader(117): BaseClassLoader->loadClass(string[53] revivalpmmp\pureentities\entity\monster\walking\Stray)
+#15 (): BaseClassLoader->{closure}(string[53] revivalpmmp\pureentities\entity\monster\walking\Stray)
+#16 (): spl_autoload_call(string[53] revivalpmmp\pureentities\entity\monster\walking\Stray)
+#17 pmsrc/src/pocketmine/entity/Entity(964): ReflectionClass->__construct(string[53] revivalpmmp\pureentities\entity\monster\walking\Stray)
+#18 plugins/生物AI插件/src/revivalpmmp/pureentities/PureEntities(161): pocketmine\entity\Entity::registerEntity(string[53] revivalpmmp\pureentities\entity\monster\walking\Stray)
+#19 pmsrc/src/pocketmine/plugin/FolderPluginLoader(127): revivalpmmp\pureentities\PureEntities->onLoad()
+#20 pmsrc/src/pocketmine/plugin/FolderPluginLoader(78): pocketmine\plugin\FolderPluginLoader->initPlugin(object revivalpmmp\pureentities\PureEntities, object pocketmine\plugin\PluginDescription, string[68] C:\Users\BigTang\Desktop\.....................\plugins\PureEntitiesX, string[69] C:\Users\BigTang\Desktop\.....................\plugins\......AI......)
+#21 pmsrc/src/pocketmine/plugin/PluginManager(158): pocketmine\plugin\FolderPluginLoader->loadPlugin(string[69] C:\Users\BigTang\Desktop\.....................\plugins\......AI......)
+#22 pmsrc/src/pocketmine/plugin/PluginManager(346): pocketmine\plugin\PluginManager->loadPlugin(string[69] C:\Users\BigTang\Desktop\.....................\plugins\......AI......, array[3])
+#23 pmsrc/src/pocketmine/Server(1927): pocketmine\plugin\PluginManager->loadPlugins(string[55] C:\Users\BigTang\Desktop\.....................\plugins\)
+#24 pmsrc/src/pocketmine/PocketMine(337): pocketmine\Server->__construct(object BaseClassLoader, object pocketmine\utils\MainLogger, string[47] C:\Users\BigTang\Desktop\.....................\, string[55] C:\Users\BigTang\Desktop\.....................\plugins\)
+
+LiteCore-public v1.0.9-release version: 23637750059910d5b9fcc925775e206822774933 [Protocol 113; API 3.0.1]
+Git commit: 23637750059910d5b9fcc925775e206822774933
+uname -a: Windows NT SHUMENGYA 10.0 build 22621 (Windows 10) AMD64
+PHP version: 7.3.22
+Zend version: 3.3.22
+OS : WINNT, win
+
+Server uptime: 0 seconds
+Number of loaded worlds: 0
+Players online: 0/666
+
+Loaded plugins:
+CutGlass 1.0.0 by Spiderman for API(s) 1.0.0, 2.0.0, 3.0.0, 3.0.0-ALPHA1, 3.0.0-ALPHA2, 3.0.0-ALPHA3, 3.0.0-ALPHA4, 3.0.0-ALPHA5, 3.0.0-ALPHA6, 4.0.0
+CutIce 1.0.0 by Spiderman for API(s) 1.0.0, 2.0.0, 3.0.0, 3.0.0-ALPHA1, 3.0.0-ALPHA2, 3.0.0-ALPHA3, 3.0.0-ALPHA4, 3.0.0-ALPHA5, 3.0.0-ALPHA6, 4.0.0
+CutWatermelon 1.0.0 by Spiderman for API(s) 1.0.0, 2.0.0, 3.0.0, 3.0.0-ALPHA1, 3.0.0-ALPHA2, 3.0.0-ALPHA3, 3.0.0-ALPHA4, 3.0.0-ALPHA5, 3.0.0-ALPHA6, 4.0.0
+DesertPyramid 1 by AnonymousPL for API(s) 3.0.0
+Dungeons 1 by AnonymousPL for API(s) 3.0.0
+EnderStructure 2.0.0 by sanekmelkov for API(s) 3.0.0
+EventNotifierPlugin 1.0.0 by YourName for API(s) 3.0.0, 4.0.0
+FakePlayerPlugin 1.0.0 by 树萌芽 for API(s) 3.0.0-ALPHA5
+ItemNBTViewer 1.0.0 by  for API(s) 3.0.0
+Mineshaft 1 by AnonymousPL for API(s) 3.0.0
+MobSpawn 1 by Nik1t0n4ik for API(s) 3.5.0, 3.0.0-ALPHA5
+PhpCommand 1.0.0 by  for API(s) 3.0.0
+RandomOreGenerator 1.0.0 by YourName for API(s) 3.0.0, 4.0.0
+SpecialHit 1.0.0 by Spiderman for API(s) 1.0.0, 2.0.0, 3.0.0, 3.0.0-ALPHA1, 3.0.0-ALPHA2, 3.0.0-ALPHA3, 3.0.0-ALPHA4, 3.0.0-ALPHA5, 3.0.0-ALPHA6, 4.0.0
+Stronghold 1 by AnonymousPL for API(s) 3.0.0
+TierLoot 1.0.0 by 树萌芽 for API(s) 3.0.0-ALPHA5
+WorldTeleportPlugin 1.1.0 by YourName for API(s) 3.0.0, 4.0.0
+
+----------------------REPORT THE DATA BELOW THIS LINE-----------------------
+
+===BEGIN CRASH DUMP===
+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
+===END CRASH DUMP===

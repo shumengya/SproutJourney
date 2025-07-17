@@ -1,0 +1,8 @@
+# 排除所有文件，然后通过Dockerfile精确控制复制内容
+*
+
+# 允许Dockerfile访问这些必要文件
+!Dockerfile
+!Dockerfile.clean
+!docker-start.sh
+!.dockerignore 
